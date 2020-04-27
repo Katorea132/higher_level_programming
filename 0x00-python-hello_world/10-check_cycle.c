@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 	if (list == 0)
 		return (0);
 
-	for (past = future = list; future && future->next;)
+	for (past = future = list; past && future;)
 	{
 		past = past->next;
 		future = future->next->next;
