@@ -1,2 +1,3 @@
 #!/bin/bash
-python3 -m py_compile $PYFILE -o $PYFILEc
+python3 -m compileall -b $PYFILE
+mv $PYFILE $PYFILEc
