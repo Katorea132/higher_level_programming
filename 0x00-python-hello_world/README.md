@@ -1,2 +1,2 @@
-# holbertonschool-higher_level_programming
+# First Python, SHell and C project
 **This contains python, shell and C scripts **
