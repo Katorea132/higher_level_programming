@@ -5,6 +5,6 @@ def remove_char_at(str, n):
     in a given index'''
     for c in str:
         if (n >= 0):
-            return str[:n] + [n + 1:]
+            return str[:n] + str[n + 1:]
         else:
             return str
