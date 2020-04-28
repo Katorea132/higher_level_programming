@@ -22,15 +22,9 @@ listint_t *insert_node(listint_t **head, int number)
 		*head = lili;
 		return (lili);
 	}
-	for (; tmp->next != NULL; tmp = tmp->next)
-	{
-		if (tmp->n < number && tmp->next->n >= number)
-		{
-			lili->next = tmp->next;
-			tmp->next = lili;
-			return (lili);
-		}
-	}
+	for (; tmp->next&& tmp->next-> n <= number; tmp = tmp->next)
+		;
+	lili->next = tmp->next;
 	tmp->next = lili;
 	return (lili);
 }
