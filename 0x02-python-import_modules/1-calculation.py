@@ -7,4 +7,4 @@ if __name__ == '__main__':
     {0} - {1} = {3}
     {0} * {1} = {4}
     {0} / {1} = {5}
-    """.format(a, b, add(a, b), sub(a, b), mul(a, b), div(a, b)))
+    """.format(a, b, add(a, b), sub(a, b), mul(a, b), div(a, b)), end='')
