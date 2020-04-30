@@ -15,5 +15,5 @@ if __name__ == '__main__':
         elif op == '-':
             print(a, op, b, '=', sub(a, b))
         else:
-            print('Unknown operator. Avaliable operators: +, -, * and /')
+            print('Unknown operator. Available operators: +, -, * and /')
             exit(1)
