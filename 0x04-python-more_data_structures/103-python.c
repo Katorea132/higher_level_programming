@@ -18,6 +18,7 @@ void print_python_bytes(PyObject *p)
 		for (i = 0; i <= ((PyVarObject *)p)->ob_size && i < 10; i++)
 			printf(" %02hhx", ((PyBytesObject *)p)->ob_sval[i]);
 		printf("\n");
+		return;
 	}
 	printf("  [ERROR] Invalid Bytes Object\n");
 }
