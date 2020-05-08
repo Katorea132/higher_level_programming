@@ -6,9 +6,9 @@ void print_python_bytes(PyObject *p)
 {
 	unsigned int i;
 	
+	printf("[.] bytes object info\n");
 	if(PyBytes_Check(p))
 	{
-		printf("[.] bytes object info\n");
 		printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
 		printf("  trying string: %s\n", ((PyBytesObject *)p)->ob_sval);
 		if (((PyVarObject *)p)->ob_size < 10)
