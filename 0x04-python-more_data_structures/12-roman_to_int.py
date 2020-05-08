@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
+    val = 0
     if roman_string and type(roman_string) is str and roman_string.isalpha():
-        val = 0
         rs = roman_string.upper()
         for i in range(len(rs)):
             if rs[i] is 'I':
@@ -31,7 +31,5 @@ def roman_to_int(roman_string):
                 else:
                     val -= 1000
             else:
-                return None
-        return val
-
-            
+                return 0
+    return val
