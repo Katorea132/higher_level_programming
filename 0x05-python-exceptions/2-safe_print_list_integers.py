@@ -7,8 +7,8 @@ def safe_print_list_integers(my_list=[], x=0):
                 print('{d}'.format(numbers), end='')
                 nums += 1
             else:
-                break;
+                break
         except TypeError:
-            continue;
+            continue
     print()
     return nums
