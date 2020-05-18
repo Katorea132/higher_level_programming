@@ -6,9 +6,9 @@ def safe_print_list_integers(my_list=[], x=0):
             if nums <= x:
                 print('{d}'.format(numbers), end='')
                 nums += 1
-            except TypeError:
-                continue;
             else:
                 break;
+        except TypeError:
+            continue;
     print()
     return nums
