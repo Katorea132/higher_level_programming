@@ -72,7 +72,6 @@ class Square:
                     print("".join([" " for s in p]), end="")
                     print("".join(["#" for i in r]))
 
-
     @property
     def position(self):
         """Getter of position
@@ -92,9 +91,9 @@ class Square:
         Raises:
             TypeError: checks for the tuple to have adecuate values
         """
-        if type(value) is not tuple or len(value) is not 2 or  \
-         type(value[0]) is not int or value[0] < 0 or \
-         type(value[1]) is not int or value[1] < 0:
+        if type(value) is not tuple or len(value) is not 2 or\
+            type(value[0]) is not int or value[0] < 0 or\
+                type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
