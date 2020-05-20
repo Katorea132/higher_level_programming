@@ -2,6 +2,7 @@
 """The module for linked lists
 """
 
+
 class Node:
     """THis is the node logic
     """
