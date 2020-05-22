@@ -7,15 +7,15 @@ god damn right
 
 
 def say_my_name(first_name, last_name=""):
-    """[summary]
+    """This function will print the name of the person, or
+    the lines associated with the character :D
 
     Args:
-        first_name ([type]): [description]
-        last_name (str, optional): [description]. Defaults to "".
+        first_name (str): First name
+        last_name (str): Last name. Defaults to "".
 
     Raises:
-        TypeError: [description]
-        TypeError: [description]
+        TypeError: In case either first or last name aren't strings
     """
     if type(first_name) is not str:
         raise TypeError("first_name must be a string")
