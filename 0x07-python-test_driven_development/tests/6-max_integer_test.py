@@ -40,8 +40,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer("01234567890zZ"), max("01234567890zZ"))
         self.assertEqual(max_integer([[1, 2, 3], [-100]]), \
             max([[1, 2, 3], [-100]]))
-        self.assertEqual(max_integer([float('NaN'), float('-inf'), float('inf')]),\
-            max([float('NaN'), float('-inf'), float('inf')]))
+        self.assertEqual(max_integer([float('-inf'), float('inf')]),\
+            max([float('-inf'), float('inf')]))
 
 
     def test_errors(self):
@@ -55,5 +55,3 @@ class TestMaxInteger(unittest.TestCase):
             max_integer(-100)
         with self.assertRaises(TypeError):
             max_integer(100)
-        with self.assertRaises(TypeError):
-            max_integer([True, False, True])
