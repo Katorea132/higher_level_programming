@@ -1,0 +1,28 @@
+Tests for 5-text_indentation.py
+text_indentation will be used
+===
+Importing module
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation(90)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation("pizza. ? :            pepperoni pie. pizza pie")
+    pizza.
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    pepperoni pie.
+    <BLANKLINE>
+    pizza pie
+    >>> text_indentation("                    piña                ")
+    piña
+    >>> text_indentation(" .             :                    ?            ")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>

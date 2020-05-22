@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module contains a function to add 2 numbers casted to integers
 they must be floats or integers in the first place
