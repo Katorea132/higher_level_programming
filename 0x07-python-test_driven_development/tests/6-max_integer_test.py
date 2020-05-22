@@ -45,6 +45,8 @@ class TestMaxInteger(unittest.TestCase):
 
 
     def test_errors(self):
+        """This searches for the appropiated raises of errors"
+        """
         with self.assertRaises(TypeError):
             max_integer(0)
         with self.assertRaises(TypeError):
