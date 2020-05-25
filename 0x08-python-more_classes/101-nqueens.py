@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-""" This is a module for solving N queens problem
+"""This module holds the algorithm to solve the code
+through backtrack
 """
 
 
 def ValPos(table, y, x):
-    """Function to check is the position is valid
+    """Returns False if not a valid position, true if so
 
     Args:
-        table (matrix): This holds the NxN table
-        y (int): Position in Y axis
+        table (list of lists): The table
+        y (int): Positions in Y axis
         x (int): Position in X axis
 
     Returns:
-        bool: True is position is valid, False otherwise
+        bool: true or false depending on if a valid position or not
     """
-    return [False if table[pos] is x or abs(table[pos] - x) is abs(pos - y)
-            else True for pos in range(y)]
+    return all((False if table[pos] is x or abs(table[pos] - x)
+                is abs(pos - y) else True for pos in range(y)))
 
 
 def PosTable(table, y):
