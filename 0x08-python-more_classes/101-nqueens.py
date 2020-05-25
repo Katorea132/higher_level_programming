@@ -44,10 +44,10 @@ if __name__ == "__main__":
         exit(1)
     try:
         n = int(sys.argv[1])
-        if n < 4:
-            print("N must be at least 4")
-            exit(1)
     except:
         print("N must be a number")
+        exit(1)
+    if n < 4:
+        print("N must be at least 4")
         exit(1)
     PosTable([0 for col in range(n)], 0)
