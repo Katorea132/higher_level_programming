@@ -103,4 +103,4 @@ class Rectangle:
         Returns:
             str: the official thingy to recreate the object
         """
-        return "Rectangle({}, {}".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.width, self.height)
