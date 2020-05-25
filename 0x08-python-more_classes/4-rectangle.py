@@ -96,3 +96,11 @@ class Rectangle:
             return ""
         ret = (("#" * self.width + "\n") * self.height)
         return ret[:-1]
+
+    def __repr__(self):
+        """An official string representing the thingy
+
+        Returns:
+            str: the official thingy to recreate the object
+        """
+        return "Rectangle({}, {}".format(self.width, self.height)
