@@ -10,4 +10,4 @@ def lazy_matrix_mul(m_a, m_b):
     Returns:
         matrix: matrix
     """
-    return numpy.matmul(m_a, m_b).tolist()
+    return (numpy.matmul(m_a, m_b))
