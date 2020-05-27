@@ -17,6 +17,4 @@ def print_square(size):
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
-    r = range(size)
-    for can in range(size):
-        print("#" * size)
+    print((("#" * size + "\n") * size), end="")
