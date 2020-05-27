@@ -4,47 +4,43 @@ matrix_mul will be used
 Importing module
 >>> matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
-matrix([[ 7, 10],
-        [15, 22]])
+[[7, 10], [15, 22]]
 >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
-matrix([[13, 16]])
+[[13, 16]]
 >>> matrix_mul(9, [[]])
-matrix([], shape=(1, 0), dtype=float64)
+Traceback (most recent call last):
+    ...
+ValueError: Scalar operands are not allowed, use '*' instead
 >>> matrix_mul([[1, 2], [2, 3]], 9)
 Traceback (most recent call last):
     ...
-ValueError: shapes (2,2) and (1,1) not aligned: 2 (dim 1) != 1 (dim 0)
+ValueError: Scalar operands are not allowed, use '*' instead
 >>> matrix_mul([1, 2], [1, 2])
-Traceback (most recent call last):
-    ...
-ValueError: shapes (1,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+5
 >>> matrix_mul([[1, 2], [2, 3]], [1, 2])
-Traceback (most recent call last):
-    ...
-ValueError: shapes (2,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+[5, 8]
 >>> matrix_mul([], [])
-Traceback (most recent call last):
-    ...
-ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
+0.0
 >>> matrix_mul([[1, 2], [2, 3]], [])
 Traceback (most recent call last):
     ...
-ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
 >>> matrix_mul([["pizza", 2], [1, 2]], [[1, 2], [2, 1]])
 Traceback (most recent call last):
     ...
-ValueError: data type must provide an itemsize
+TypeError: invalid data type for einsum
 >>> matrix_mul([[1, 2], [1, 2]], [["pizza", 1], [1, 2]])
 Traceback (most recent call last):
     ...
-ValueError: data type must provide an itemsize
+TypeError: invalid data type for einsum
 >>> matrix_mul([[1, 2, 3], [1, 2]], [[2, 1], [2, 2]])
-matrix([[list([1, 2, 3, 1, 2, 3, 1, 2, 1, 2]),
-         list([1, 2, 3, 1, 2, 1, 2])]], dtype=object)
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
 >>> matrix_mul([[1, 2], [2, 3]], [[1, 2, 3, 4], [1, 2, 3]])
 Traceback (most recent call last):
     ...
-ValueError: shapes (2,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+ValueError: setting an array element with a sequence.
 >>> matrix_mul([[1, 2], [1, 2]], [[1, 2, 3], [1, 2, 3], [1, 2, 3]])
 Traceback (most recent call last):
     ...

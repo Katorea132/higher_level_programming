@@ -5,9 +5,9 @@ import numpy
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """lazy matrix multiplication
+    """lazy matrix mult
 
     Returns:
         matrix: matrix
     """
-    return numpy.matrix(m_a) * numpy.matrix(m_b)
+    return numpy.matmul(m_a, m_b).tolist()
