@@ -10,6 +10,8 @@
 [1, -1, -2, 2, 10, 0]
 >>> lili.print_sorted()
 [-2, -1, 0, 1, 2, 10]
+>>> print(lili)
+[1, -1, -2, 2, 10, 0]
 >>> lili = MyList()
 >>> lili.print_sorted()
 []
