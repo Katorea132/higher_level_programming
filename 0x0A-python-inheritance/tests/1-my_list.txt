@@ -1,0 +1,16 @@
+>>> MyList = __import__("1-my_list").MyList
+>>> lili = MyList()
+>>> lili.append(1)
+>>> lili.append(-1)
+>>> lili.append(-2)
+>>> lili.append(2)
+>>> lili.append(10)
+>>> lili.append(0)
+>>> lili.print_sorted()
+[-2, -1, 0, 1, 2, 10]
+>>> lili = MyList()
+>>> lili.print_sorted()
+[]
+>>> lili.append(10)
+>>> lili.print_sorted()
+[10]
