@@ -11,6 +11,6 @@ def from_json_string(my_str):
         my_str (JSON): the thing to be a string
 
     Returns:
-        obj: the string
+        dict: the string
     """
     return json.loads(my_str)
