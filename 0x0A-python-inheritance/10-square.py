@@ -22,4 +22,9 @@ class Square(Rekt):
         super().__init__(size, size)
 
     def area(self):
+        """Returns the area
+
+        Returns:
+            int: The area
+        """
         return self.__size * self.__size
