@@ -21,7 +21,7 @@ class MyInt(int):
         """
         return int(self) != int(other)
 
-    def __nq__(self, other):
+    def __ne__(self, other):
         """Inverts inequality
 
         Args:
