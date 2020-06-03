@@ -9,7 +9,7 @@ def to_json_string(my_obj):
     """Returns a json out of a string
 
     Args:
-        my_obj (object): The soon to be json 
+        my_obj (object): The soon to be json
 
     Returns:
         json: RepresensaTION
