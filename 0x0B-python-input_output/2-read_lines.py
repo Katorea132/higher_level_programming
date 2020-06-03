@@ -15,4 +15,4 @@ def read_lines(filename="", nb_lines=0):
             print(f.read(), end="")
             return
         for __ in range(nb_lines):
-            print(f.readline(),end="")
+            print(f.readline(), end="")
