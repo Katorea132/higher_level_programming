@@ -56,3 +56,4 @@ with open(mappath, "r") as mapf:
             print("[*] Writing '{}' at {:x}".format(wstr, addrstart + i))
             memf.seek(addrstart + i)
             memf.write(bytes(wstr, "ASCII"))
+            break
