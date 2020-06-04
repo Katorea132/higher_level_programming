@@ -10,7 +10,7 @@ def Err_Exit():
 
 if len(sys.argv) is not 4:
     Err_Exit()
-pid, sstr, wstr = int(sys.argv[1]), str(sys.argv[2]), str(sys.argv[3]) + "\0"
+pid, sstr, wstr = int(sys.argv[1]), str(sys.argv[2]), str(sys.argv[3])
 if pid <= 0 or sstr is "" or wstr is "":
     Err_Exit()
 
@@ -56,6 +56,7 @@ with open(mappath, "r") as mapf:
             print("[*] Writing '{}' at {:x}".format(wstr, addrstart + i))
             memf.seek(addrstart + i)
             memf.write(bytes(wstr, "ASCII"))
-        exit(0)
+            print("nice")
+            exit(0)
 print("something went wrong D:")
 exit(1)
