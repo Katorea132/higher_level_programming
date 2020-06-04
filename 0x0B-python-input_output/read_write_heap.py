@@ -32,6 +32,9 @@ with open(mappath, "r") as mapf:
         print("\toffset = {}".format(offs))
         print("\tinode = {}".format(inode))
 
+        if "r" not in perm or "w" not in perm:
+            print("No permissions for {}".format(pathi))
+            break
         addr = addr.split("-")
         if len(addr) is not 2:
             print("Wrong format for address")
@@ -43,10 +46,18 @@ with open(mappath, "r") as mapf:
         with open(mempath, "rb+") as memf:
             memf.seek(addrstart)
             heap = memf.read(addrend - addrstart)
-            i = heap.index(bytes(sstr, "ASCII"))
+            try:
+                i = heap.index(bytes(sstr, "ASCII"))
+            except:
+                print("Can't find '{}'".format(sstr))
+                break
             print("[*] Found '{}' at {:x}".format(sstr, i))
 
             print("[*] Writing '{}' at {:x}".format(wstr, addrstart + i))
             memf.seek(addrstart + i)
             memf.write(bytes(wstr, "ASCII"))
+            print("nice")
             break
+    exit(0)
+print("something went wrong D:")
+exit(1)
