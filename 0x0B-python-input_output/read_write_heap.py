@@ -34,29 +34,28 @@ with open(mappath, "r") as mapf:
 
         if "r" not in perm or "w" not in perm:
             print("No permissions for {}".format(pathi))
-            break
+            exit(1)
         addr = addr.split("-")
         if len(addr) is not 2:
             print("Wrong format for address")
-            break
+            exit(1)
         addrstart = int(addr[0], 16)
         addrend = int(addr[1], 16)
         print("\tAddr start [{:x}] | end [{:x}]".format(addrstart, addrend))
+        break
 
-        with open(mempath, "rb+") as memf:
-            memf.seek(addrstart)
-            heap = memf.read(addrend - addrstart)
-            try:
-                i = heap.index(bytes(sstr, "ASCII"))
-            except:
-                print("Can't find '{}'".format(sstr))
-                break
-            print("[*] Found '{}' at {:x}".format(sstr, i))
+with open(mempath, "rb+") as memf:
+    memf.seek(addrstart)
+    heap = memf.read(addrend - addrstart)
+    try:
+        i = heap.index(bytes(sstr, "ASCII"))
+    except:
+        print("Can't find '{}'".format(sstr))
+        exit(1)
+    print("[*] Found '{}' at {:x}".format(sstr, i))
 
-            print("[*] Writing '{}' at {:x}".format(wstr, addrstart + i))
-            memf.seek(addrstart + i)
-            memf.write(bytes(wstr, "ASCII"))
-            print("nice")
-            exit(0)
-print("something went wrong D:")
-exit(1)
+    print("[*] Writing '{}' at {:x}".format(wstr, addrstart + i))
+    memf.seek(addrstart + i)
+    memf.write(bytes(wstr, "ASCII"))
+    print("nice")
+    exit(0)
