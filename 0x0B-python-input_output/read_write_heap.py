@@ -32,7 +32,7 @@ with open(mappath, "r") as mapf:
         print("\toffset = {}".format(offs))
         print("\tinode = {}".format(inode))
 
-        if perm[0] is not "r" or perm[1] not "w":
+        if perm[0] != "r" or perm[1] != "w":
             print("No permissions for {}".format(pathi))
             exit(1)
         addr = addr.split("-")
