@@ -15,6 +15,8 @@ if len(sys.argv) is not 4:
 pid, sstr, wstr = int(sys.argv[1]), str(sys.argv[2]), str(sys.argv[3])
 if pid <= 0 or sstr is "":
     Err_Exit()
+if wstr is "":
+    wstr = "Nope"
 
 mappath, mempath = "/proc/{}/maps".format(pid), "/proc/{}/mem".format(pid)
 print("[*] maps: {}\n[*] mem: {}".format(mappath, mempath))
