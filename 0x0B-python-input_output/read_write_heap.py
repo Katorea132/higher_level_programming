@@ -13,7 +13,7 @@ def Err_Exit():
 if len(sys.argv) is not 4:
     Err_Exit()
 pid, sstr, wstr = int(sys.argv[1]), str(sys.argv[2]), str(sys.argv[3])
-if pid <= 0 or sstr is "" or wstr is "":
+if pid <= 0 or sstr is "":
     Err_Exit()
 
 mappath, mempath = "/proc/{}/maps".format(pid), "/proc/{}/mem".format(pid)
