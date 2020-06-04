@@ -5,6 +5,8 @@ import sys
 
 
 def Err_Exit():
+    """Docstring
+    """
     print("Usage: {} pid search_string replace_string". format(sys.argv[0]))
     exit(1)
 
@@ -32,7 +34,7 @@ with open(mappath, "r") as mapf:
         print("\toffset = {}".format(offs))
         print("\tinode = {}".format(inode))
 
-        if perm[0] != "r" or perm[1] != "w":
+        if "r" not in perm or "w" not in perm:
             print("No permissions for {}".format(pathi))
             exit(1)
         addr = addr.split("-")
