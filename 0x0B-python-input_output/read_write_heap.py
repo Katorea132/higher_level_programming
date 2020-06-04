@@ -57,5 +57,4 @@ with open(mempath, "rb+") as memf:
     print("[*] Writing '{}' at {:x}".format(wstr, addrstart + i))
     memf.seek(addrstart + i)
     memf.write(bytes(wstr, "ASCII"))
-    print("nice")
-    exit(0)
+print("nice")
