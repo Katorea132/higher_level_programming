@@ -9,5 +9,4 @@ try:
     data = load("add_item.json")
 except:
     data = []
-data.extend(sys.argv[1:])
-save(data, "add_item.json")
+save(data.extend(sys.argv[1:]), "add_item.json")
