@@ -57,7 +57,8 @@ with open(mappath, "r") as mapf:
             memf.seek(addrstart + i)
             memf.write(bytes(wstr, "ASCII"))
             print("nice")
-            break
-    exit(0)
+        memf.close()
+        mapf.close()
+        exit(0)
 print("something went wrong D:")
 exit(1)
