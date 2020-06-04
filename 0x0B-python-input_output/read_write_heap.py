@@ -59,6 +59,7 @@ with open(mappath, "r") as mapf:
             print("nice")
         memf.close()
         mapf.close()
+        print("nice")
         exit(0)
 print("something went wrong D:")
 exit(1)
