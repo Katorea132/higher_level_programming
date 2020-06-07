@@ -149,6 +149,8 @@ class Rectangle(Base):
             .format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """Updates stuff
+        """
         if args:
             count = 0
             for val in args:
