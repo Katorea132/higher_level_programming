@@ -27,13 +27,13 @@ class Square(Rectangle):
         Returns:
             str: Pretty format
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
-              self.width)
-    
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.width)
+
     @property
     def size(self):
         return self.width
-    
+
     @size.setter
     def size(self, val):
         self.width = val
