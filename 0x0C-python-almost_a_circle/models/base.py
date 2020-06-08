@@ -86,6 +86,11 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """Saves to a CSV
+
+        Args:
+            list_objs (list): list of objects
+        """
         sqrc = cls.__name__
         with open(sqrc + ".csv", "w") as f:
             if sqrc is "Rectangle":
@@ -99,6 +104,11 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Loads from a CSV
+
+        Returns:
+            dict: the thingies
+        """
         deser = []
         sqrc = cls.__name__
         with open(sqrc + ".csv", "r", newline="", encoding="utf-8") as f:
