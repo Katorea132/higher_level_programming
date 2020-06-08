@@ -2,6 +2,7 @@
 """This module constains a class called Base
 """
 import json
+import csv
 
 
 class Base:
@@ -78,6 +79,40 @@ class Base:
         """
         try:
             with open(cls.__name__ + ".json", "r") as f:
-                return [cls.create(**d) for d in cls.from_json_string(f.read())]
+                return [cls.create(**d) for d in
+                        cls.from_json_string(f.read())]
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        sqrc = cls.__name__
+        with open(sqrc + ".csv", "w") as f:
+            if sqrc is "Rectangle":
+                for o in list_objs:
+                    f.write("{},{},{},{},{}\n"
+                            .format(o.id, o.width, o.height, o.x, o.y))
+            else:
+                for o in list_objs:
+                    f.write("{},{},{},{}\n"
+                            .format(o.id, o.size, o.x, o.y))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        deser = []
+        sqrc = cls.__name__
+        with open(sqrc + ".csv", "r", newline="", encoding="utf-8") as f:
+            file = csv.reader(f)
+            if sqrc is "Rectangle":
+                for line in file:
+                    subl = [int(li) for li in line]
+                    d = {"id": subl[0], "width": subl[1], "height": subl[2],
+                         "x": subl[3], "y": subl[4]}
+                    deser.append(cls.create(**d))
+            else:
+                for line in file:
+                    subl = [int(li) for li in line]
+                    d = {"id": subl[0], "size": subl[1], "x": subl[2],
+                     "y": subl[3]}
+                    deser.append(cls.create(**d))
+        return deser
