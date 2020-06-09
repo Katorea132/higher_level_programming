@@ -69,12 +69,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.y, 0)
 
     def test_Area(self):
+        """this is for the area
+        """
         with self.assertRaises(TypeError) as err:
             Rectangle.area()
         r = Rectangle(1, 2)
         self.assertEqual(r.area(), 2)
 
     def test_Display(self):
+        """This is for displaying
+        """
         with self.assertRaises(TypeError) as err:
             Rectangle.display()
         r = Rectangle(1, 1)
@@ -89,6 +93,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(out.getvalue(), "\n #\n")
 
     def test_toStr(self):
+        """This is to check str
+        """
         with self.assertRaises(TypeError) as err:
             Rectangle.__str__()
         r = Rectangle(1, 1)
