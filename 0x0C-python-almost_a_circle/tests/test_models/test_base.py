@@ -77,3 +77,39 @@ were given"
         expect = "to_json_string() missing 1 required positional \
 argument: 'list_dictionaries'"
         self.assertEqual(str(err.exception), expect)
+
+    def test_fromJson(self):
+        """Test to test from JSON
+        """
+        test = '[{"pizza": 1, "pineapple": 1}]'
+        self.assertEqual(Base.from_json_string(test),
+                         [{"pizza": 1, "pineapple": 1}])
+        test = '[{"pizza": 1, "pineapple": 1}, {"1": 2}]'
+        self.assertEqual(Base.from_json_string(test),
+                         [{"pizza": 1, "pineapple": 1}, {"1": 2}])
+        test = '[{}]'
+        self.assertEqual(Base.from_json_string(test),
+                         [{}])
+        test = '[{}, {}]'
+        self.assertEqual(Base.from_json_string(test),
+                         [{}, {}])
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string(""), [])
+        with self.assertRaises(TypeError) as err:
+            Base.from_json_string()
+        expect = "from_json_string() missing 1 required positional \
+argument: 'json_string'"
+        self.assertEqual(str(err.exception), expect)
+
+    def test_create(self):
+        """Tests to test create
+        """
+        case = Rectangle(1, 3, 2)
+        test = Rectangle.create(**(case.to_dictionary()))
+        self.assertEqual(str(case), str(test))
+        self.assertFalse(case is test)
+
+    def test_toFile(self):
+        """Tests to test save
+        """
+        
