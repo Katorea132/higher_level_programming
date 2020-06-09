@@ -139,3 +139,11 @@ class TestRectangle(unittest.TestCase):
     def test_toDict(self):
         """Tests to dict function
         """
+        with self.assertRaises(TypeError) as err:
+            Rectangle.to_dictionary()
+        r = Rectangle(1, 1)
+        self.assertEqual(r.to_dictionary(),
+                         {'width': 1, 'id': 1, 'height': 1, 'x': 0, 'y': 0})
+        r = Rectangle(1, 1, 1, 1, 1)
+        self.assertEqual(r.to_dictionary(),
+                         {'width': 1, 'id': 1, 'height': 1, 'x': 1, 'y': 1})
