@@ -123,6 +123,6 @@ class Base:
                 for line in file:
                     subl = [int(li) for li in line]
                     d = {"id": subl[0], "size": subl[1], "x": subl[2],
-                     "y": subl[3]}
+                         "y": subl[3]}
                     deser.append(cls.create(**d))
         return deser
