@@ -112,4 +112,23 @@ argument: 'json_string'"
     def test_toFile(self):
         """Tests to test save
         """
-        
+        test = Square(1)
+        Square.save_to_file([test])
+        testText = Square.to_json_string(test)
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), testText)
+        test = Rectangle(1, 3, 2)
+        Rectangle.save_to_file(test)
+        testText = Rectangle.to_json_string(test)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), testText)
+        test = Square(1)
+        Square.save_to_file(test)
+        testText = Square.to_json_string(test)
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), testText)
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        with self.assertRaises(TypeError):
+            Base.save_to_file(1)
