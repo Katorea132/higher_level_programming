@@ -101,3 +101,41 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
         r = Rectangle(1, 1, 1, 1, 1)
         self.assertEqual(str(r), "[Rectangle] (1) 1/1 - 1/1")
+
+    def test_Update(self):
+        """Tests updates
+        """
+        with self.assertRaises(TypeError) as err:
+            Rectangle.update()
+        r = Rectangle(1, 1)
+        r.update(132)
+        self.assertEqual(r.id, 132)
+        r.update(132, 132, 132, 132, 132)
+        self.assertEqual(r.width, 132)
+        self.assertEqual(r.height, 132)
+        self.assertEqual(r.x, 132)
+        self.assertEqual(r.y, 132)
+        r.update(132, 132, 132, 132, 132, 133)
+        self.assertEqual(r.width, 132)
+        self.assertEqual(r.height, 132)
+        self.assertEqual(r.x, 132)
+        self.assertEqual(r.y, 132)
+        with self.assertRaises(ValueError):
+            r.update(132, -132)
+        with self.assertRaises(ValueError):
+            r.update(132, 132, -132)
+        with self.assertRaises(ValueError):
+            r.update(132, 132, 132, -132)
+        with self.assertRaises(ValueError):
+            r.update(132, 132, 132, 132, -132)
+        r.update(id=133)
+        self.assertEqual(r.id, 133)
+        r.update(id=133, height=133, width=133, x=133, y=133)
+        self.assertEqual(r.width, 133)
+        self.assertEqual(r.height, 133)
+        self.assertEqual(r.x, 133)
+        self.assertEqual(r.y, 133)
+
+    def test_toDict(self):
+        """Tests to dict function
+        """
