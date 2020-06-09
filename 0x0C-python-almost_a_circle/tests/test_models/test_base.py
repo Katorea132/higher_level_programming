@@ -114,21 +114,33 @@ argument: 'json_string'"
         """
         test = Square(1)
         Square.save_to_file([test])
-        testText = Square.to_json_string(test)
+        testText = [Square.to_json_string(test.to_dictionary())]
         with open("Square.json", "r") as f:
-            self.assertEqual(f.read(), testText)
+            self.assertEqual(len(f.read()), len(str(testText)) - 2)
         test = Rectangle(1, 3, 2)
-        Rectangle.save_to_file(test)
-        testText = Rectangle.to_json_string(test)
+        Rectangle.save_to_file([test])
+        testText = [Rectangle.to_json_string(test.to_dictionary())]
         with open("Rectangle.json", "r") as f:
-            self.assertEqual(f.read(), testText)
+            self.assertEqual(len(f.read()), len(str(testText)) - 2)
         test = Square(1)
-        Square.save_to_file(test)
-        testText = Square.to_json_string(test)
+        Square.save_to_file([test])
+        testText = Square.to_json_string(test.to_dictionary())
         with open("Square.json", "r") as f:
-            self.assertEqual(f.read(), testText)
+            self.assertEqual(len(f.read()), len(str(testText)) + 2)
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
         with self.assertRaises(TypeError):
             Base.save_to_file(1)
+
+    def test_loadFrom(self):
+        """This tests loads
+        """
+        test = Square(1)
+        testR = Rectangle(1, 1, 1)
+        Square.save_to_file([test])
+        Rectangle.save_to_file([testR])
+        liliS = Square.load_from_file()
+        liliR = Rectangle.load_from_file()
+        self.assertEqual(str(test), str(liliS[0]))
+        self.assertEqual(str(testR), str(liliR[0]))
