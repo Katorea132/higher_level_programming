@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     cur = log.cursor()
     query = "SELECT * FROM states WHERE name "
-    query += "= '{}'".format(par[4])
+    query += "= '{}' ORDER BY id ASC".format(par[4])
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
