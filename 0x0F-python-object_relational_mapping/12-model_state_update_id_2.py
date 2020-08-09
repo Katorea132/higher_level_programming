@@ -15,10 +15,7 @@ if __name__ == '__main__':
 
     ses = sessionmaker(bind=eng)
     Sess = ses()
-    state = State(name="Louisiana")
-    Sess.add(state)
     state = Sess.query(State).get(2)
     state.name = "New Mexico"
     Sess.commit()
     Sess.close()
-    
