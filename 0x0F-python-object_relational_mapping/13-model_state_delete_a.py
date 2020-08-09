@@ -18,4 +18,5 @@ if __name__ == '__main__':
     states = Sess.query(State).filter(State.name.contains("a"))
     for state in states:
         Sess.delete(state)
+    Sess.commit()
     Sess.close()
