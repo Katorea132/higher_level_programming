@@ -17,7 +17,7 @@ if __name__ == '__main__':
     Sess = ses()
     states = Sess.query(State).filter(State.name == par[4]).first()
     if states:
-        print(state.id)
+        print(states[0].id)
     else:
         print('Not found')
     Sess.close()
