@@ -10,7 +10,7 @@ if __name__ == '__main__':
     from sqlalchemy.orm import sessionmaker
     args = 'mysql+mysqldb://{}:{}'.format(par[1], par[2])
     args += '@localhost:3306/{}'.format(par[3])
-    eng = create_engine(args, pool__pre_ping=True)
+    eng = create_engine(args, pool_pre_ping=True)
     Base.metadata.create_all(eng)
 
     ses = sessionmaker(bind=eng)
