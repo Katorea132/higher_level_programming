@@ -7,5 +7,6 @@ def find_peak(lili):
     """COmment
     """
     if lili:
-        return max(lili)
+        lili.sort()
+        return lili[-1]
     return None
