@@ -8,7 +8,5 @@ if __name__ == '__main__':
 {}/{}/commits'.format(argv[1], argv[2]))
     counter = 0
     for j in r.json():
-        if counter > 9:
-            break
-        print('{}: {}'.format(j['sha'], j['commit']['author']['name']))
-        counter += 1
+        print('{}: {}'
+              .format(j.get('sha'), j.get('commit').get('author').get('name')))
