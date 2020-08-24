@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Amusement park
+""" Amusement park """
 import requests
 import sys
 

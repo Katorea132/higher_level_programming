@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Hecking nice
+""" Hecking nice """
 import requests
 
 if __name__ == '__main__':

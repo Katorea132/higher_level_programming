@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# naichu
+""" naichu """
 from sys import argv
 import requests
 

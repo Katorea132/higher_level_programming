@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# man, requests is the best
+""" man, requests is the best """
 import requests
 import sys
 

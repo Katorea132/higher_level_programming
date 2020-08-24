@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# nais nais nais
+""" nais nais nais """
 import requests
 import sys
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Hmm
+""" Hmm """
 import requests
 from sys import argv
 

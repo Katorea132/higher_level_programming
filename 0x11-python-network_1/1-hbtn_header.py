@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# More urllib
+""" More urllib """
 from urllib import request
 import sys
 
