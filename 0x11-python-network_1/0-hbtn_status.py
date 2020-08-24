@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Requests with urllib
+""" Requests with urllib """
 from urllib import request
 
 if __name__ == '__main__':
